@@ -1,0 +1,37 @@
+from collections import deque
+
+def solve():
+    t_str = input()
+    t = int(t_str)
+    
+    for _ in range(t):
+        n_str = input()
+        n = int(n_str)
+        
+        cubes = deque(map(int, input().split()))
+        
+        last_picked = float('inf')
+        possible = True
+        
+        while cubes:
+            left = cubes[0]
+            right = cubes[-1]
+            
+            if left >= right:
+                current_cube = cubes.popleft()
+            else:
+                current_cube = cubes.pop()
+                
+            if current_cube <= last_picked:
+                last_picked = current_cube
+            else:
+                possible = False
+                break
+        
+        if possible:
+            print("Yes")
+        else:
+            print("No")
+
+if __name__ == "__main__":
+    solve()
