@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    n_a = int(input())
+    set_a = set(map(int, input().split()))
+    
+    n_ops = int(input())
+    
+    for _ in range(n_ops):
+        operation_name = input().split()[0]
+        other_set = set(map(int, input().split()))
+        
+        getattr(set_a, operation_name)(other_set)
+        
+    print(sum(set_a))
