@@ -1,0 +1,11 @@
+N = int(input())
+
+numbers = input().split()
+
+
+all_positive = all(int(i) > 0 for i in numbers)
+
+
+any_palindrome = any(i == i[::-1] for i in numbers)
+
+print(all_positive and any_palindrome)
