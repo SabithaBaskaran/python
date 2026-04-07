@@ -1,0 +1,24 @@
+import sys
+
+def solve():
+    
+    line1 = sys.stdin.readline().split()
+    if not line1:
+        return
+    n, m = map(int, line1)
+    
+    
+    athletes = []
+    for _ in range(n):
+        row = list(map(int, sys.stdin.readline().split()))
+        athletes.append(row)
+     
+    k = int(sys.stdin.readline().strip())
+    athletes.sort(key=lambda x: x[k])
+    
+    for athlete in athletes:
+        print(*(athlete))
+
+if __name__ == "__main__":
+    solve()
+
