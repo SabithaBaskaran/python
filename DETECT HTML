@@ -1,0 +1,23 @@
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+    def handle_startendtag(self, tag, attrs):
+        print(tag)
+        for name, value in attrs:
+            print(f"-> {name} > {value}")
+
+# Read the number of lines
+n = int(input())
+html_content = ""
+
+for _ in range(n):
+    html_content += input().rstrip() + '\n'
+
+# Initialize and feed the parser
+parser = MyHTMLParser()
+parser.feed(html_content)
