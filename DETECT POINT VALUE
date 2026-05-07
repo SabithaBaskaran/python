@@ -1,0 +1,9 @@
+import re
+
+for _ in range(int(input())):
+    s = input()
+    try:
+        is_float = float(s)
+        print(bool(re.search(r'\.\d+', s)))
+    except:
+        print(False)
