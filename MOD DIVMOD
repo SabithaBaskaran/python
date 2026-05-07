@@ -1,0 +1,10 @@
+# Read input integers
+a = int(input())
+b = int(input())
+
+# Calculate integer division and modulo
+print(a // b)
+print(a % b)
+
+# Use the divmod function for the third line
+print(divmod(a, b))
