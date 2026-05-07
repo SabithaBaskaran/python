@@ -1,0 +1,13 @@
+import numpy as np
+
+# Read N (rows) and M (columns)
+n, m = map(int, input().split())
+
+# Read the matrix elements and convert to a NumPy array of integers
+matrix = np.array([input().split() for _ in range(n)], int)
+
+# Print the transposed array
+print(matrix.transpose())
+
+# Print the flattened array
+print(matrix.flatten())
