@@ -1,0 +1,9 @@
+def person_lister(f):
+    def inner(people):
+        # Sort by the age index (2), converted to int for numerical sorting
+        people.sort(key=lambda x: int(x[2]))
+        # Return a list of formatted names using the function f
+        return [f(person) for person in people]
+    return inner
+
+
