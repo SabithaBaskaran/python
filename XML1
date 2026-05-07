@@ -1,0 +1,4 @@
+def get_attr_number(node):
+    # Sum the number of attributes for the current node and all its descendants
+    return sum(len(elem.attrib) for elem in node.iter())
+
