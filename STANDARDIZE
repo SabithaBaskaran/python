@@ -1,0 +1,7 @@
+def wrapper(f):
+    def fun(l):
+        # Slice the last 10 digits to ignore any 0, 91, or +91 prefixes
+        formatted_numbers = ["+91 " + n[-10:-5] + " " + n[-5:] for n in l]
+        return f(formatted_numbers)
+    return fun
+
