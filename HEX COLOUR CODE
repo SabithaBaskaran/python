@@ -1,0 +1,7 @@
+import re
+
+css_content = "\n".join([input() for _ in range(int(input()))])
+matches = re.findall(r'(?<=.)#([a-fA-F0-9]{3}|[a-fA-F0-9]{6})\b', css_content)
+
+for color in matches:
+    print(f"#{color}")
